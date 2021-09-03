@@ -1,1 +1,6 @@
-<p>job-start-date works!</p>
+<ng-container [formGroup]="jobStartDateForm">
+    <div class="row">
+        <label for="date"> Job start date </label>
+        <input type="date" formControlName="date" class="">
+    </div>
+</ng-container>
