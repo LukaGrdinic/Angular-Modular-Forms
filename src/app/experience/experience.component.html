@@ -1,0 +1,9 @@
+<ng-container [formGroup]="experienceForm">
+    <div class="row">
+        <label for="experience"> Years of Experience </label>
+        <input type="number" formControlName="experience" class="">
+        <p style="color: red" *ngIf="experienceForm.get('experience').errors && experienceForm.get('experience').errors.max">
+            Cant have more years of experience than age
+        </p>
+    </div>
+</ng-container>

@@ -1,0 +1,7 @@
+<ng-container [formGroup]="billingInfoForm">
+    <app-basic-info formControlName="basicInfo"></app-basic-info>
+    <app-address formControlName="address"></app-address> 
+    <app-age #ageForm formControlName="age"></app-age> 
+    <app-experience [age]="ageForm.age" formControlName="experience"></app-experience> 
+    <button type=”submit” [disabled]="billingInfoForm.invalid">Place Order</button>
+</ng-container>
