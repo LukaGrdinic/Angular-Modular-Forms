@@ -25,6 +25,7 @@ export class BillingInfoComponent implements OnInit {
       address: [ '' ],
       age: [ '' ],
       experience: [ '' ],
+      dateOfBirth: [ '' ],
     });
   }
 

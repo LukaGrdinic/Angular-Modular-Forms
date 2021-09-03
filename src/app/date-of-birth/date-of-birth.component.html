@@ -1,1 +1,6 @@
-<p>date-of-birth works!</p>
+<ng-container [formGroup]="dateOfBirthForm">
+    <div class="row">
+        <label for="date"> Date of Birth </label>
+        <input type="date" formControlName="date" class="">
+    </div>
+</ng-container>
