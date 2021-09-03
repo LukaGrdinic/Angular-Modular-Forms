@@ -10,6 +10,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BillingInfoComponent } from './billing-info/billing-info.component';
 import { AgeComponent } from './age/age.component';
 import { ExperienceComponent } from './experience/experience.component';
+import { JobDetailsComponent } from './job-details/job-details.component';
+import { JobStartDateComponent } from './job-details/job-start-date/job-start-date.component';
+import { DateOfBirthComponent } from './date-of-birth/date-of-birth.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ExperienceComponent } from './experience/experience.component';
     AddressComponent,
     BillingInfoComponent,
     AgeComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    JobDetailsComponent,
+    JobStartDateComponent,
+    DateOfBirthComponent
   ],
   imports: [
     BrowserModule,
