@@ -3,5 +3,6 @@
     <app-address formControlName="address"></app-address> 
     <app-age #ageForm formControlName="age"></app-age> 
     <app-experience [age]="ageForm.age" formControlName="experience"></app-experience> 
+    <app-job-details formControlName="jobDetails"></app-job-details> 
     <button type=”submit” [disabled]="billingInfoForm.invalid">Place Order</button>
 </ng-container>
