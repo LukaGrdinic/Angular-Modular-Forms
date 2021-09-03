@@ -36,13 +36,12 @@ export class BasicInfoComponent implements OnInit, ControlValueAccessor, Validat
   constructor(private fb: FormBuilder) {
     this.basicInfoForm = this.fb.group({
       fname: ['', [Validators.required]],
-      email: ['', [Validators.required]]
+      email: ['', [Validators.required]],
+      dateOfBirth: [ '' ],
     });
    }
 
-  ngOnInit() {
-    console.log('basicInfoForm', this.basicInfoForm);
-  }
+  ngOnInit() {}
 
   public onTouched: () => void = () => {};
 

@@ -1,16 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-const data = {
-  basicInfo: {
-    fname: 'Luka',
-    email: '1lukagrdinic@gmail.com'
-  },
-  address: {
-    address: 'My address 123'
-  }
-};
-
 @Component({
   selector: 'app-billing-info',
   templateUrl: './billing-info.component.html',
@@ -25,12 +15,10 @@ export class BillingInfoComponent implements OnInit {
       address: [ '' ],
       age: [ '' ],
       experience: [ '' ],
-      dateOfBirth: [ '' ],
     });
   }
 
   ngOnInit() {
-    this.billingInfoForm.patchValue(data);
   }
 
 }
