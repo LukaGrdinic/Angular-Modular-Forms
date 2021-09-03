@@ -1,3 +1,4 @@
+import { BillingInfoFormService } from './../billing-info-form.service';
 import { Component, OnInit, forwardRef, Input, OnChanges } from '@angular/core';
 import {
   ControlValueAccessor,
@@ -28,23 +29,26 @@ import {
     }
   ]
 })
-export class ExperienceComponent implements OnInit, OnChanges, ControlValueAccessor, Validator {
+export class ExperienceComponent implements OnInit, ControlValueAccessor, Validator {
 
   @Input() age = 0;
 
   public experienceForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private billingInfoFormService: BillingInfoFormService
+    ) {
     this.experienceForm = this.fb.group({
       experience: [ '', [ Validators.required ] ]
     });
   }
 
-  ngOnInit() {}
-
-  ngOnChanges() {
-    this.experienceForm.get('experience').setValidators([ Validators.required, Validators.max(this.age)]);
-    this.experienceForm.get('experience').updateValueAndValidity();
+  ngOnInit() {
+    this.billingInfoFormService.billingInfoFormState.subscribe(val => {
+      this.experienceForm.get('experience').setValidators([ Validators.required, Validators.max(val.ageForm.age)]);
+      this.experienceForm.get('experience').updateValueAndValidity({ emitEvent: false }); 
+    });
   }
 
   public onTouched: () => void = () => {};

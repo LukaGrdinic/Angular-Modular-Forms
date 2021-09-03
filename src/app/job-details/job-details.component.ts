@@ -34,7 +34,7 @@ export class JobDetailsComponent implements OnInit, ControlValueAccessor, Valida
 
   constructor(private fb: FormBuilder) {
     this.jobDetailsForm = this.fb.group({
-      startDate: ['', [ Validators.required ]]
+      jobStartDateForm: ['', [ Validators.required ]]
     });
    }
 

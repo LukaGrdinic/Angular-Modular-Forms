@@ -37,7 +37,7 @@ export class BasicInfoComponent implements OnInit, ControlValueAccessor, Validat
     this.basicInfoForm = this.fb.group({
       fname: ['', [Validators.required]],
       email: ['', [Validators.required]],
-      dateOfBirth: [ '' ],
+      dateOfBirthForm: [ '' ],
     });
    }
 
