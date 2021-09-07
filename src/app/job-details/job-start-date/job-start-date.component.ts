@@ -1,3 +1,4 @@
+import { CustomValidators } from 'src/app/custom-validators';
 import { Component, OnInit, forwardRef, Input, OnChanges } from '@angular/core';
 import {
   ControlValueAccessor,
@@ -8,8 +9,9 @@ import {
   Validators,
   AbstractControl,
   ValidationErrors,
-  FormBuilder
+  FormBuilder,
 } from '@angular/forms';
+import { BillingInfoFormService } from 'src/app/billing-info-form.service';
 
 @Component({
   selector: 'app-job-start-date',
@@ -36,13 +38,25 @@ export class JobStartDateComponent implements OnInit, ControlValueAccessor, Vali
 
   public jobStartDateForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private billingInfoFormService: BillingInfoFormService
+    ) {
     this.jobStartDateForm = this.fb.group({
       date: [ '', [ Validators.required ] ]
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.billingInfoFormService.billingInfoFormState.subscribe(val => {
+      const minDate = new Date(val.basicInfo.dateOfBirthForm.date);
+      this.jobStartDateForm.get('date').setValidators([ 
+        Validators.required, 
+        CustomValidators.minDate(minDate)
+      ]);
+      this.jobStartDateForm.get('date').updateValueAndValidity({ emitEvent: false }); 
+    });
+  }
 
   public onTouched: () => void = () => {};
 

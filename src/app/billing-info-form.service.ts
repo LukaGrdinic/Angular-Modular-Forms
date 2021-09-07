@@ -6,7 +6,7 @@ export interface BillingInfoFormValues {
     fname: string,
     email: string,
     dateOfBirthForm: {
-      date: Date
+      date: string
     },
   },
   addressForm: {
@@ -20,7 +20,7 @@ export interface BillingInfoFormValues {
   },
   jobDetails: {
     jobStartDateForm: {
-      startDate: Date
+      startDate: string
     }
   },
 }
@@ -30,7 +30,7 @@ export const defualtBillingInfoFormState: BillingInfoFormValues = {
     fname: 'Marko',
     email: 'markomarkovic@gmail.com',
     dateOfBirthForm: {
-      date: new Date()
+      date: '2021-09-09'
     },
   },
   addressForm: {
@@ -44,7 +44,7 @@ export const defualtBillingInfoFormState: BillingInfoFormValues = {
   },
   jobDetails: {
     jobStartDateForm: {
-      startDate: new Date()
+      startDate: '2021-09-09'
     }
   },
 };

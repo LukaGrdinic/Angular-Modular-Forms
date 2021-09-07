@@ -2,5 +2,8 @@
     <div class="row">
         <label for="date"> Job start date </label>
         <input type="date" formControlName="date" class="">
+        <p style="color: red" *ngIf="jobStartDateForm.get('date').errors && jobStartDateForm.get('date').errors.minDate">
+            Cant be before date of birth
+        </p>
     </div>
 </ng-container>
