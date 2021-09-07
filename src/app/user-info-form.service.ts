@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-export interface BillingInfoFormValues {
+export interface UserInfoFormValues {
   basicInfo: {
     fname: string,
     email: string,
@@ -25,7 +25,7 @@ export interface BillingInfoFormValues {
   },
 }
 
-export const defualtBillingInfoFormState: BillingInfoFormValues = {
+export const defaultUserInfoFormState: UserInfoFormValues = {
   basicInfo: {
     fname: 'Marko',
     email: 'markomarkovic@gmail.com',
@@ -50,9 +50,9 @@ export const defualtBillingInfoFormState: BillingInfoFormValues = {
 };
 
 @Injectable()
-export class BillingInfoFormService {
+export class UserInfoFormService {
 
-  public billingInfoFormState: BehaviorSubject<BillingInfoFormValues> = new BehaviorSubject(defualtBillingInfoFormState);
+  public billingInfoFormState: BehaviorSubject<UserInfoFormValues> = new BehaviorSubject(defaultUserInfoFormState);
 
   constructor() { }
 }

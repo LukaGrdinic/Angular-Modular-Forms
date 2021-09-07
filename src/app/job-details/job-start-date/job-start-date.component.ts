@@ -11,7 +11,7 @@ import {
   ValidationErrors,
   FormBuilder,
 } from '@angular/forms';
-import { BillingInfoFormService } from 'src/app/billing-info-form.service';
+import { UserInfoFormService } from 'src/app/user-info-form.service';
 
 @Component({
   selector: 'app-job-start-date',
@@ -40,7 +40,7 @@ export class JobStartDateComponent implements OnInit, ControlValueAccessor, Vali
 
   constructor(
     private fb: FormBuilder,
-    private billingInfoFormService: BillingInfoFormService
+    private billingInfoFormService: UserInfoFormService
     ) {
     this.jobStartDateForm = this.fb.group({
       date: [ '', [ Validators.required ] ]

@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { BillingInfoFormService } from '../billing-info-form.service';
+import { UserInfoFormService } from '../user-info-form.service';
 
 @Component({
   selector: 'app-user-info',
   templateUrl: './user-info.component.html',
   styleUrls: [ './user-info.component.scss' ],
-  providers: [BillingInfoFormService]
+  providers: [UserInfoFormService]
 })
 export class UserInfoComponent implements OnInit {
 
   public userInfoForm: FormGroup;
   constructor(
     private fb: FormBuilder,
-    private billingInfoFormService: BillingInfoFormService
+    private userInfoFormService: UserInfoFormService
     ) {
     this.userInfoForm = this.fb.group({
       basicInfo: [ '' ],
@@ -27,7 +27,7 @@ export class UserInfoComponent implements OnInit {
 
   ngOnInit() {
     this.userInfoForm.valueChanges.subscribe(val => {
-      this.billingInfoFormService.billingInfoFormState.next(val);
+      this.userInfoFormService.billingInfoFormState.next(val);
     });
   }
 

@@ -1,4 +1,4 @@
-import { BillingInfoFormService } from './../billing-info-form.service';
+import { UserInfoFormService } from '../user-info-form.service';
 import { Component, OnInit, forwardRef, Input, OnChanges } from '@angular/core';
 import {
   ControlValueAccessor,
@@ -37,7 +37,7 @@ export class ExperienceComponent implements OnInit, ControlValueAccessor, Valida
 
   constructor(
     private fb: FormBuilder,
-    private billingInfoFormService: BillingInfoFormService
+    private billingInfoFormService: UserInfoFormService
     ) {
     this.experienceForm = this.fb.group({
       experience: [ '', [ Validators.required ] ]
